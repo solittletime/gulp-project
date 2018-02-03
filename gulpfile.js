@@ -76,14 +76,7 @@ function bundle(b, outputPath) {
 }
 
 var jsBundles = {
-  'js/gulp.js': createBundle('./public/js/gulp/index.js'),
-  'js/polyfills/promise.js': createBundle('./public/js/polyfills/promise.js'),
-  'js/polyfills/url.js': createBundle('./public/js/polyfills/url.js'),
-  'js/settings.js': createBundle('./public/js/settings/index.js'),
-  'js/main.js': createBundle('./public/js/main/index.js'),
-  'js/remote-executor.js': createBundle('./public/js/remote-executor/index.js'),
-  'js/idb-test.js': createBundle('./public/js/idb-test/index.js'),
-  'sw.js': createBundle(['./public/js/sw/index.js', './public/js/sw/preroll/index.js'])
+  'js/gulp.js': createBundle('./public/js/gulp/index.js')
 };
 
 gulp.task('js:browser', function () {
