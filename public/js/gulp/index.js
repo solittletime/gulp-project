@@ -1,1 +1,1 @@
-console.log("Hello World from Main Javascript")
+console.log("Hello World from swittr")

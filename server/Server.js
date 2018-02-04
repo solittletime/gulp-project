@@ -1,7 +1,7 @@
 import express from 'express';
 import zlib from 'zlib';
 import compression from 'compression';
-import {EventEmitter} from 'events';
+import { EventEmitter } from 'events';
 import gulpTemplate from './templates/gulp';
 
 const compressor = compression({
@@ -13,7 +13,7 @@ export default class Server extends EventEmitter {
     super();
     this._app = express();
     this._port = port;
-    
+
     const staticOptions = {
       maxAge: 0
     };
@@ -25,7 +25,10 @@ export default class Server extends EventEmitter {
     this._app.use('/avatars', express.static('../public/avatars', staticOptions));
 
     this._app.get('/', (req, res) => {
-      res.send(gulpTemplate({ title: 'Getting started with Gulp' }))
+      res.send(gulpTemplate({
+        title: 'Getting started with swittr',
+        description: 'A fake social network app.'
+      }))
     });
   }
 
