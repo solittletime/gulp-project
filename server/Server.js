@@ -2,7 +2,10 @@ import express from 'express';
 import zlib from 'zlib';
 import compression from 'compression';
 import { EventEmitter } from 'events';
-import gulpTemplate from './templates/gulp';
+//import gulpTemplate from './templates/gulp';
+import indexTemplate from './templates/index';
+import postsTemplate from './templates/posts';
+import postTemplate from './templates/post';
 
 const compressor = compression({
   flush: zlib.Z_PARTIAL_FLUSH
@@ -25,9 +28,9 @@ export default class Server extends EventEmitter {
     this._app.use('/avatars', express.static('../public/avatars', staticOptions));
 
     this._app.get('/', (req, res) => {
-      res.send(gulpTemplate({
-        title: 'Getting started with swittr',
-        description: 'A fake social network app.'
+      res.send(indexTemplate({
+        scripts: '<script src="/js/main.js" defer></script>',
+        content: ''
       }))
     });
   }

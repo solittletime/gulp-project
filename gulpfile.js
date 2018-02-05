@@ -76,7 +76,7 @@ function bundle(b, outputPath) {
 }
 
 var jsBundles = {
-  'js/gulp.js': createBundle('./public/js/gulp/index.js')
+  'js/main.js': createBundle('./public/js/main/index.js')
 };
 
 gulp.task('js:browser', function () {
